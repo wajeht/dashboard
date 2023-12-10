@@ -1,13 +1,13 @@
 export default oauth.googleEventHandler({
   config: {
-    emailRequired: true
+    emailRequired: true,
   },
   async onSuccess(event, { user }) {
     await setUserSession(event, {
       user: {
         google: user,
       },
-      loggedInAt: Date.now()
+      loggedInAt: Date.now(),
     })
 
     return sendRedirect(event, '/')

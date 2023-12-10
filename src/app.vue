@@ -1,8 +1,7 @@
 <script setup lnag="ts">
-
-const { data } = await useFetch('/api/cards/index');
-
+const { data } = await useFetch('/api/cards/index')
 </script>
+
 <template>
   <div>
     <!-- <NuxtWelcome /> -->

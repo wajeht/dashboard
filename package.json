@@ -1,7 +1,7 @@
 {
   "name": "nuxt-app",
-  "private": true,
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,11 +12,16 @@
     "db:generate": "npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "db:reset": "npx prisma migrate reset --force",
-    "db:seed": "tsx ./src/server/database/seeds/seed.ts"
+    "db:seed": "tsx ./src/server/database/seeds/seed.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "prisma": {
     "schema": "./src/server/database/schema.prisma",
     "seed": "tsx ./src/server/database/seeds/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",
@@ -35,8 +40,5 @@
     "prisma": "^5.7.0",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
-  },
-  "dependencies": {
-    "@prisma/client": "^5.7.0"
   }
 }
