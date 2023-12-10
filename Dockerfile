@@ -28,4 +28,4 @@ ENV HOST=0.0.0.0
 ENV PORT=3000
 ENV NODE_ENV=production
 
-ENTRYPOINT ["dumb-init", "node", ".output/server/index.mjs"]
+ENTRYPOINT ["dumb-init", "node", "./.output/server/index.mjs"]
