@@ -11,7 +11,7 @@ RUN npm install
 
 COPY ./ .
 
-RUN npx nuxt build
+RUN npm run build
 
 # Add a command to list the contents of the expected directory
 RUN ls -la /usr/src/app
@@ -27,7 +27,7 @@ USER nuxtuser
 WORKDIR /usr/src/app
 
 # Copy built files from build stage
-COPY --chown=nuxtuser:nuxtuser --from=build /usr/src/app/.output ./
+COPY --chown=nuxtuser:nuxtuser --from=build /usr/src/app/* ./
 
 EXPOSE 3000
 
