@@ -4,6 +4,11 @@ export default defineNuxtConfig({
   imports: {
     autoImport: true,
   },
+  ui: {
+    icons: {
+      dynamic: true
+    }
+  },
   robots: {
     UserAgent: '*',
     Disallow: '/',
