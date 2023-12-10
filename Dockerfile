@@ -14,7 +14,7 @@ COPY . ./
 RUN npx nuxt build
 
 # Add a command to list the contents of the expected directory
-RUN ls -la /usr/src/app/
+RUN ls -la /usr/src
 
 # Final Image
 FROM node:20.6.1-alpine3.17
