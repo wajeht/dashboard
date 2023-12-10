@@ -13,6 +13,9 @@ COPY . ./
 
 RUN npx nuxt build
 
+# Add a command to list the contents of the expected directory
+RUN ls -la /usr/src/app/
+
 # Final Image
 FROM node:20.6.1-alpine3.17
 
@@ -34,7 +37,8 @@ ENV PORT=3000
 ENV NODE_ENV=production
 
 # Health Check
-HEALTHCHECK CMD curl -f http://localhost:3000/api/healthz || exit 1
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:3000/api/healthz || exit 1
 
 # Entry Point
 ENTRYPOINT ["dumb-init", "node", "./.output/server/index.mjs"]
