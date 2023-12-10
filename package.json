@@ -7,9 +7,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "db:push": "npx prisma db push",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate dev",
+    "db:reset": "npx prisma migrate reset --force",
+    "db:seed": "tsx ./src/server/database/seeds/seed.ts"
+  },
+  "prisma": {
+    "schema": "./src/server/database/schema.prisma",
+    "seed": "tsx ./src/server/database/seeds/seed.ts"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@formkit/auto-animate": "^0.8.1",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
@@ -22,7 +32,11 @@
     "nuxt": "^3.8.2",
     "nuxt-auth-utils": "^0.0.10",
     "nuxt-vitest": "^0.11.5",
+    "prisma": "^5.7.0",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.0"
   }
 }
