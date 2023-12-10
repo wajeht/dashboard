@@ -17,7 +17,9 @@ const language = computed(() => is404 ? 'This page could not be found' : 'An err
         Looks like you've followed a broken link or entered a URL that doesn't exist on this site.
       </div>
 
-      <UButton @click="$router.back()" color="primary" variant="outline" label="Go back" :trailing="false" />
+      <div>
+        <UButton size="xl" @click="$router.back()" color="gray" variant="solid" label="Go back" :trailing="false" />
+      </div>
 
       <pre v-if="isDev">{{ error }}</pre>
     </div>
