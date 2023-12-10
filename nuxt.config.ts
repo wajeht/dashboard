@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   srcDir: './src',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+  imports: {
+    autoImport: true
+  },
   robots: {
      UserAgent: '*',
      Disallow: '/' ,
@@ -18,5 +21,6 @@ export default defineNuxtConfig({
    "nuxt-vitest",
    "@nuxtjs/robots",
    "@nuxtjs/plausible",
+   "nuxt-auth-utils"
   ]
 })
