@@ -9,13 +9,14 @@ export default defineNuxtConfig({
     apiHost: 'https://plausible.jaw.dev/',
  },
   modules: [
-    "@nuxtjs/tailwindcss",
-    "@formkit/auto-animate",
-    "@vueuse/nuxt",
-    "@nuxt/image",
-    "@nuxtjs/color-mode",
-    "nuxt-vitest",
-    "@nuxtjs/robots",
-    "@nuxtjs/plausible"
+   "@nuxt/ui",
+   "@nuxtjs/tailwindcss",
+   "@formkit/auto-animate",
+   "@vueuse/nuxt",
+   "@nuxt/image",
+   "@nuxtjs/color-mode",
+   "nuxt-vitest",
+   "@nuxtjs/robots",
+   "@nuxtjs/plausible",
   ]
 })
