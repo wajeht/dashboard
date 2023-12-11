@@ -5,7 +5,7 @@ const { loggedIn, user, session, clear } = useUserSession()
 
 <template>
   <div class="flex h-screen items-center justify-center w-screen">
-    <UButton v-if="!loggedIn" size="xl" external="true" to="/auth/google" color="gray" variant="solid"
+    <UButton v-if="!loggedIn" size="xl" external="true" to="/api/auth/google" color="gray" variant="solid"
       label="Sign in with Google" :trailing="false">
       <template #leading>
         <UIcon name="i-logos-google-icon" dynamic />
