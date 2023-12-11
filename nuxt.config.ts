@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   imports: {
     autoImport: true,
   },
+  auth: {},
   ui: {
     icons: {
       dynamic: true

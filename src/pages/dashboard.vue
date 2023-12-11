@@ -1,4 +1,6 @@
 <script setup lang="ts">
+definePageMeta({ middleware: 'auth' });
+
 const { data: cards, error } = await useFetch('/api/cards')
 
 </script>
