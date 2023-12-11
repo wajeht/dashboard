@@ -22,7 +22,7 @@
   },
   "prisma": {
     "schema": "./src/server/database/schema.prisma",
-    "seed": "tsx ./src/server/database/seeds/seed.ts"
+    "seed": "npx tsx ./src/server/database/seeds/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.7.0"
