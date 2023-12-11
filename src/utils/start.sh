@@ -1,5 +1,5 @@
 #!/bin/sh
 
-npm run db:migrate:prod
-npm run db:generate
+npx prisma migrate deploy
+npx prisma generate
 node ./.output/server/index.mjs
