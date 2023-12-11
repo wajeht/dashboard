@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   imports: {
     autoImport: true,
   },
+  runtimeConfig: {
+    adminEmailAddress: process.env.ADMIN_EMAIL_ADDRESS,
+  },
   auth: {},
   ui: {
     icons: {
