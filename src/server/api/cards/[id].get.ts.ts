@@ -4,15 +4,14 @@ import db from '../../database/db'
 export default defineEventHandler(async (event: H3Event) => {
   await requireUserSession(event)
   const id = getRouterParam(event, 'id')
-  try {
-    const card = await db.card.findFirst(id)
-    console.log(card)
-  }
-  catch (error) {
-    console.log('xxxxx')
-    throw await createError({
+  const card = await db.card.findFirst(id)
+
+  if (!card) {
+    throw createError({
       statusCode: 404,
       statusMessage: 'not found',
     })
   }
+
+  return card;
 })

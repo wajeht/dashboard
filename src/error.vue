@@ -1,9 +1,9 @@
 <script setup>
-const props = defineProps({ error: Object })
-const isDev = process.dev
-const message = computed(() => String(props.error?.message || ''))
-const is404 = computed(() => props.error?.statusCode === 404 || message.value?.includes('404'))
-const language = computed(() => is404 ? 'This page could not be found' : 'An error occurred')
+const props = defineProps({ error: Object });
+const isDev = process.dev;
+const message = computed(() => String(props.error?.message || ''));
+const is404 = computed(() => props.error?.statusCode === 404 || message.value?.includes('404'));
+const language = computed(() => is404 ? 'This page could not be found' : 'An error occurred');
 </script>
 
 <template>
