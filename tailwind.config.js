@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-				'fade-pattern': 'url("/assets/images/background.png")',
-			},
+        'fade-pattern': 'url("/assets/images/background.png")',
+      },
     },
   },
   plugins: [],

@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   auth: {},
   ui: {
     icons: {
-      dynamic: true
-    }
+      dynamic: true,
+    },
   },
   robots: {
     UserAgent: '*',
