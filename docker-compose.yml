@@ -1,6 +1,22 @@
 version: '3.8'
 
 services:
+  postgres:
+    image: 'postgres:alpine'
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: '${DB_HOST}'
+      POSTGRES_DB: '${DB_DATABASE}'
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+    ports:
+      - '${DB_PORT}:${DB_PORT}'
+    networks:
+      - dashboard-network
+    volumes:
+      - 'postgres-data:/var/lib/postgresql/data'
+
   app:
     build:
       context: .
@@ -14,9 +30,21 @@ services:
       - HOST=0.0.0.0
       - PORT=3000
       - NODE_ENV=development
+    depends_on:
+      - postgres
+    networks:
+      - dashboard-network
     healthcheck:
       test: [CMD, curl, -f, 'http://localhost:3000/api/healthz']
       interval: 30s
       timeout: 30s
       start_period: 5s
       retries: 3
+
+volumes:
+  postgres-data:
+    driver: local
+
+networks:
+  dashboard-network:
+    driver: bridge

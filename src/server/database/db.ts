@@ -1,5 +1,3 @@
-/* eslint-disable vars-on-top */
-/* eslint-disable node/prefer-global/process */
 import { PrismaClient } from '@prisma/client';
 
 declare global {
@@ -8,12 +6,12 @@ declare global {
 }
 
 const prisma
-	= globalThis.prisma
+	= global.prisma
 	|| new PrismaClient({
 	  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
 	});
 
 if (process.env.NODE_ENV !== 'production')
-  globalThis.prisma = prisma;
+  global.prisma = prisma
 
 export default prisma;
