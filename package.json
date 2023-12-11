@@ -14,7 +14,8 @@
     "db:reset": "npx prisma migrate reset --force",
     "db:seed": "tsx ./src/server/database/seeds/seed.ts",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "upgrade": "npx nuxi upgrade --force"
   },
   "prisma": {
     "schema": "./src/server/database/schema.prisma",
