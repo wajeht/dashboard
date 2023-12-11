@@ -11,9 +11,8 @@ const language = computed(() => is404 ? 'This page could not be found' : 'An err
   <NuxtLayout>
     <div class="flex flex-col h-screen text-center items-center justify-center gap-4">
 
-      <div class="text-3xl"> {{ language }} </div>
-
-      <div class="text-xl opacity-50">
+      <div class="text-4xl font-bold tracking-tight text-center text-gray-200"> {{ language }} </div>
+      <div class="text-lg leading-8 text-gray-400 text-center">
         Looks like you've followed a broken link or entered a URL that doesn't exist on this site.
       </div>
 
@@ -21,7 +20,7 @@ const language = computed(() => is404 ? 'This page could not be found' : 'An err
         <UButton size="xl" @click="$router.back()" color="gray" variant="solid" label="Go back" :trailing="false" />
       </div>
 
-      <pre v-if="isDev">{{ error }}</pre>
+      <pre v-if="isDev" class="text-left">{{ error }}</pre>
     </div>
   </NuxtLayout>
 </template>
