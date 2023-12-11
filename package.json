@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "npm run db:generate && npm run db:migrate:prod && node ./.output/server/index.mjs",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -10,7 +11,8 @@
     "postinstall": "nuxt prepare",
     "db:push": "npx prisma db push",
     "db:generate": "npx prisma generate",
-    "db:migrate": "npx prisma migrate dev",
+    "db:migrate:dev": "npx prisma migrate dev",
+    "db:migrate:prod": "npx prisma migrate deploy",
     "db:reset": "npx prisma migrate reset --force",
     "db:seed": "tsx ./src/server/database/seeds/seed.ts",
     "lint": "eslint .",
